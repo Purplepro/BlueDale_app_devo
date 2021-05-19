@@ -1,0 +1,30 @@
+<h1>Crypto Info</h1>
+
+
+<ul>
+    <% results.forEach(result => { %>
+        <li>Id: <%= result.data.id %> </li>
+        <li>Rank: <%= result.data.rank  %> </li>
+        <li>Symbol: <%= result.data.symbol  %>  </li>
+        <li>Name: <%= result.data.name  %> </li>
+        <li>Supply: <%= result.data.supply %> </li>
+        <li>MarketCapUsd: <%= result.data.marketCapUsd %></li>
+        <li>VolumeUsd24Hr: <%= result.data.volumeUsd24Hr %> </li>
+        <li>Explorer: <%= result.data.explorer %> </li>
+        <li>Timestamp: <%= result.data.timestamp %> </li>
+   <% }) %> 
+    <button>Add</button>
+</ul>
+<!-- 
+id: 'bitcoin',
+      rank: '1',
+      symbol: 'BTC',
+      name: 'Bitcoin',
+      supply: '18713700.0000000000000000',
+      maxSupply: '21000000.0000000000000000',
+      marketCapUsd: '753373007021.0807779221655200',
+      volumeUsd24Hr: '78612880261.0537030695759411',
+      priceUsd: '40257.8328722316152296',
+      changePercent24Hr: '-7.6410864310237636',
+      vwap24Hr: '40065.5623646604558174',
+      explorer: 'https://blockchain.info/' -->

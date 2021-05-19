@@ -6,6 +6,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
+const axios = require('axios');
 
 
 
@@ -56,6 +57,8 @@ app.get('/profile', isLoggedIn, (req, res) => {
 });
 
 app.use('/auth', require('./controllers/auth'));
+
+app.use('/currency', require('./controllers/crypto'));
 
 
 const PORT = process.env.PORT || 3000;
