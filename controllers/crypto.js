@@ -55,7 +55,7 @@ router.delete('/mywatchlist/:id', (req, res) => {
         })
         .then(removed => {
             console.log(removed);
-            res.redirect('./currency/mywatchlist')
+            res.redirect('/currency/mywatchlist')
         })
         console.log(req.params.id)
 })

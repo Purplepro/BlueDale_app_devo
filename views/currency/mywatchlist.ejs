@@ -13,7 +13,7 @@
         <li>Explorer: <%= result.explorer %> </li>
         <li>Timestamp: <%= result.timestamp %> </li>
         
-        <form method="POST" action="/mywatchlist/<%= result.id %>?_method=DELETE">
+        <form method="POST" action="./mywatchlist/<%= result.id %>?_method=DELETE">
             <input type="submit" class = "btn btn-primary" value="Delete">
         </form>
     </ul>
