@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const db = require('../models');
 const methodOverride = require('method-override');
 
@@ -51,7 +50,13 @@ router.get('/mywatchlist', (req, res) => {
 })
 // whatere comes after mywatchlist/ is a parameter in this case (:id).
 router.delete('/mywatchlist/:id', (req, res) => {
-        // db.watchlist.destroy()
+        db.watchlist.destroy({
+            where: {id: parseInt(req.params.id)}
+        })
+        .then(removed => {
+            console.log(removed);
+            res.redirect('./currency/mywatchlist')
+        })
         console.log(req.params.id)
 })
 
@@ -84,32 +89,32 @@ router.post('/mywatchlist', (req, res) => {
     res.redirect('/currency/results')
         console.log(req.body);
 
-    //     const renderToPage = () => {
-    //     results = []
-    //     db.watchlist.findAll({
-    //         where: 'watchlists'
-    //     })
-    //     const config = { // this api is still needed so it can update realtime when refreshed
-    //         method: 'POST',
-    //         url: `http://api.coincap.io/v2/assets/${req.body.label}`,
-    //         headers: {  } 
-    //       };
+        // const renderToPage = () => {
+        // results = []
+        // db.watchlist.findAll({
+        //     where: 'watchlists'
+        // })
+        // const config = { // this api is still needed so it can update realtime when refreshed
+        //     method: 'POST',
+        //     url: `http://api.coincap.io/v2/assets/${req.body.label}`,
+        //     headers: {  } 
+        //   };
 
-    //       axios(config)
-    //       .then(function (response) {
-    //         //   if(response.data === undefined) 
-    //         results = [response.data]; //define results
-    //         console.log(results);
-    //         res.render('./currency/mywatchlist', {results}); 
+        //   axios(config)
+        //   .then(function (response) {
+        //     //   if(response.data === undefined) 
+        //     results = [response.data]; //define results
+        //     console.log(results);
+        //     res.render('./currency/mywatchlist', {results}); 
             
-    //       })
-    //       .catch(function (error) {
-    //         console.log(error);
-    //       });
+        //   })
+        //   .catch(function (error) {
+        //     console.log(error);
+        //   });
    
 
-    //     res.render('./currency/mywatchlist', {results});
-    // }
+        res.render('./currency/mywatchlist', {results});
+    
     
 })
 
