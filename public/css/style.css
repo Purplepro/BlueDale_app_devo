@@ -1,3 +1,11 @@
+* {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
 nav ul li {
   text-decoration: none;
   display: inline-block;
@@ -9,7 +17,14 @@ h1 {
 }
 
 #circle {
-  border-radius: 2em;
+  border-radius: 3em;
   margin-top: 5px;
+}
+
+#homelogo {
+
+  font-size: 50px;
+  color: rgb(74, 86, 253);
+  border: 2px solid white;
 
 }
