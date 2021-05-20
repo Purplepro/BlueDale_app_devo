@@ -19,7 +19,7 @@
    <% }) %> 
 
    <% results.forEach(result => { %> 
-   <a method="POST" action="./mywatchlist">
+   <form method="POST" action="./mywatchlist">
      <input hidden type="text" name="id" value="<%= result.data.id %> "> 
      <input hidden type="text" name="rank" value="<%= result.data.rank %> "> 
      <input hidden type="text" name="symbol" value="<%= result.data.symbol %> "> 
