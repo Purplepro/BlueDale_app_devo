@@ -5,5 +5,11 @@ nav ul li {
 }
 
 h1 {
-  color: chartreuse;
+  color: rgb(64, 151, 209);
+}
+
+#circle {
+  border-radius: 2em;
+  margin-top: 5px;
+
 }

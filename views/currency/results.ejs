@@ -1,4 +1,7 @@
+<h2><a href="./mywatchlist" class="watchlist" id="watch">Your watchlist</a></h2>
+
 <h1>Crypto Info</h1>
+
 
 
 <ul>
@@ -16,7 +19,7 @@
    <% }) %> 
 
    <% results.forEach(result => { %> 
-   <form method="POST" action="./mywatchlist">
+   <a method="POST" action="./mywatchlist">
      <input hidden type="text" name="id" value="<%= result.data.id %> "> 
      <input hidden type="text" name="rank" value="<%= result.data.rank %> "> 
      <input hidden type="text" name="symbol" value="<%= result.data.symbol %> "> 
@@ -29,7 +32,7 @@
      <input hidden type="text" name="changePercent24Hr" value="<%= result.data.changePercent24Hr %> "> 
      <input hidden type="text" name="vwap24Hr" value="<%= result.data.vwap24Hr %> "> 
      <input hidden type="text" name="explorer" value="<%= result.data.explorer %> "> 
-    <button class="btn btn-primary" type="submit">Add</button>
+    <button class="btn btn-primary" id="circle" type="submit">+</button>
    </form> 
        <% }) %>
    <!-- the above form is the form that I am using to add a cryptocurrency and its info to a database for favorites aka mywatchlist -->

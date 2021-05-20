@@ -1,0 +1,20 @@
+<h1>Your crypto watchlist</h1>
+
+<% listItems.forEach(result => { %>
+    <ul>
+        <li>Id: <%= result.id %> </li>
+        <li>Rank: <%= result.rank  %> </li>
+        <li>Symbol: <%= result.symbol  %>  </li>
+        <li>Name: <%= result.name  %> </li>
+        <li>Price: $<%= result.priceUsd %> </li>
+        <li>Supply: <%= result.supply %> </li>
+        <li>MarketCapUsd: $<%= result.marketCapUsd %></li>
+        <li>VolumeUsd24Hr: $<%= result.volumeUsd24Hr %> </li>
+        <li>Explorer: <%= result.explorer %> </li>
+        <li>Timestamp: <%= result.timestamp %> </li>
+        
+        <form method="POST" action="/mywatchlist/<%= result.id %>?_method=DELETE">
+            <input type="submit" class = "btn btn-primary" value="Delete">
+        </form>
+    </ul>
+   <% }) %>

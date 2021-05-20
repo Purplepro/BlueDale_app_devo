@@ -38,7 +38,7 @@ router.post('/signup', async (req, res) => {
     if (created) {
       console.log(`------ ${user.name} was created ------`);
       const successObject = {
-        successRedirect: '/',
+        successRedirect: './cryptosearch',
         successFlash: `Welcome ${user.name}. Account was created.`
       }
 

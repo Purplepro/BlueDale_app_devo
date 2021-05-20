@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 const db = require('../models');
-const { response } = require('express');
+const methodOverride = require('method-override');
 
+
+router.use(methodOverride('_method'));
 
 
 const axios = require('axios');
@@ -43,14 +45,21 @@ router.get('/results', (req, res) => {
     }
 })
 
-// router.get('/', (req, res) => {
-//     console.log(req.body)
-//     db.cryptocurrency.create(req.body)
-//     .then(added => {
-//         res.redirect('/results')
-//     })
-    
-// })
+router.get('/mywatchlist', (req, res) => {
+        db.watchlist.findAll().then(response => res.render('./currency/mywatchlist', {listItems: response})).catch(err => console.log(err))
+
+})
+// whatere comes after mywatchlist/ is a parameter in this case (:id).
+router.delete('/mywatchlist/:id', (req, res) => {
+        // db.watchlist.destroy()
+        console.log(req.params.id)
+})
+
+
+
+// -------------------------POST ROUTES-----------------
+
+
 
 router.post('/mywatchlist', (req, res) => {
     db.watchlist.create({
@@ -72,16 +81,43 @@ router.post('/mywatchlist', (req, res) => {
     .catch(err => {
         console.log(err);
     })
-    res.send('hit the page')
-        console.log(req.body)
+    res.redirect('/currency/results')
+        console.log(req.body);
+
+        const renderToPage = () => {
+        results = []
+        db.watchlist.findAll({
+            where: 'watchlists'
+        })
+        const config = { // this api is still needed so it can update realtime when refreshed
+            method: 'POST',
+            url: `http://api.coincap.io/v2/assets/${req.body.label}`,
+            headers: {  } 
+          };
+
+          axios(config)
+          .then(function (response) {
+            //   if(response.data === undefined) 
+            results = [response.data]; //define results
+            console.log(results);
+            res.render('./currency/mywatchlist', {results}); 
+            
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+   
+
+        res.render('./currency/mywatchlist', {results});
+    }
+    
 })
 
-// router.get('/test', (req, res) => {
-//     db.watchlist.findAll().then(items=>{
-//         console.log(items);
-//       });
-// })
-// res.render(‘favoriteslist’, { rickandmorty });
+
+router.put('/mywatchlist', (req, res) => {
+    res.send('this is where mywatchlist is and will be updated');
+});
+
 
 
 
