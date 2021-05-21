@@ -1,5 +1,7 @@
 * {
   list-style: none;
+  /* font-family: Helvetica, sans-serif; */
+  font-weight: bold;
 }
 
 .link {
@@ -16,6 +18,10 @@ h1 {
   color: rgb(64, 151, 209);
 }
 
+a {
+  text-decoration: none;
+}
+
 #circle {
   border-radius: 3em;
   margin-top: 5px;
@@ -28,3 +34,105 @@ h1 {
   border: 2px solid white;
 
 }
+
+nav {
+  padding: 10px;
+}
+
+.navlink {
+  color: white;
+  font-size: 20px;
+  padding: 5px
+}
+
+.link {
+  color: white;
+}
+
+/* .searchbar {
+  border-radius: 2em;
+  height: 50px;
+  width: 300px;
+  font-size: 40px;
+  padding: 10px;
+} */
+
+.input_and_button {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.divform {
+  display: flex;
+  margin-top: 200px;
+  background-color:
+}
+
+body {
+  background-image: url('../images/blockchain-infrastructure-wave-platform-vostok.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translate(0);
+}
+
+.resultcolor {
+  color: white;
+  opacity: 100%;
+}
+
+/* crpytosearch form */
+.searchbar {
+  border-radius: 2em;
+  height: 4em;
+  width: 400px;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+}
+
+.searchbar:hover {
+  border: 2px solid white;
+  transition: all 0.1s ease;
+}
+
+::placeholder {
+  font-size: 25px;
+  padding-left: 8px;
+
+}
+
+
+
+
+#searchbutton {
+  width: 150px;
+  background-color:  rgb(64, 151, 209);
+  opacity: 100%;
+  color: white
+}
+
+ #pad {
+   padding-left: 10px;
+ }
+
+
+ 
+/* where crypto search form ends */
+
+
+/* results page styling */
+
+#result-Bg {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 500px;
+  border-radius: 2em;
+  padding: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+
+
+
+
