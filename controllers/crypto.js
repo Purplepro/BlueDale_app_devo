@@ -48,14 +48,44 @@ router.get('/mywatchlist', (req, res) => {
         db.watchlist.findAll().then(response => res.render('./currency/mywatchlist', {listItems: response})).catch(err => console.log(err))
 
 })
-// whatere comes after mywatchlist/ is a parameter in this case (:id).
+
+router.put('/mywatchlist', (req, res) => {
+    updated = []
+    db.watchlist.update({
+        
+            where: {
+                id: req.params.id 
+
+            }
+
+
+
+        //   method: 'GET',
+        //   url: `api.coincap.io/v2/assets/${req.params}/history?interval=1m`,
+        //   headers: { } 
+        
+        })
+
+        .then(realTime => {
+            updated = [response.data];
+            console.log(realTime)
+        })
+         .catch(err => console.log(err))
+    res.render('./currency/mywatchlist', {updated})
+})
+
+
+
+
+// whatever comes after mywatchlist/ is a parameter in this case (:id).
+
 router.delete('/mywatchlist/:id', (req, res) => {
         db.watchlist.destroy({
             where: {id: parseInt(req.params.id)}
         })
         .then(removed => {
             console.log(removed);
-            res.redirect('/currency/mywatchlist')
+            res.redirect('/currency/mywatchlist') 
         })
         console.log(req.params.id)
 })
@@ -119,9 +149,7 @@ router.post('/mywatchlist', (req, res) => {
 })
 
 
-router.put('/mywatchlist', (req, res) => {
-    res.send('this is where mywatchlist is and will be updated');
-});
+
 
 
 
