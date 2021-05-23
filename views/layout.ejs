@@ -6,6 +6,7 @@
     <title>BlueDale</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href= "/css/animations.css">
   </head>
   <body>
     <%- include('partials/alerts') %> 
@@ -16,14 +17,91 @@
           <% if (!currentUser) { %> 
           <li class="navlink"><a href="/auth/signup" class="link">Signup</a></li>
           <li class="navlink"><a href="/auth/login" class="link">Login</a></li>
+          <li><img src="../images/Bluedale-log.png" alt="picture of a logo with the circles going diagnol when text saying BlueDale" class="logo" class ="navlink"></li>
           <% } else { %> 
+            <li><img src="../images/Bluedale-log.png" alt="picture of a logo with the circles going diagnol when text saying BlueDale" class="logo" class ="navlink"></li>
           <li><a href="/auth/logout" class="link">Logout</a></li>
           <li><a href="/profile" class="link">Profile</a></li>
+          <li><a href="./cryptosearch" class="link">Home</a></li>
+          <li><a href="./mywatchlist" class="link" id="watch">Mywatchlist</a></li>
           <% } %> 
         </ul>
       </nav>
     </header>
+    <div>
+      <h1 class="Visitor" id="LandpageV">Time to make</h1>
+    <h1 class="Visitor">Investments Worth Your While</h1>
+      </div>
     <%- body %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+    $(window).scroll(function() {
+      $('#divform').each(function(){
+      var imagePos = $(this).offset().top;
+  
+      var topOfWindow = $(window).scrollTop();
+        if (imagePos < topOfWindow+400) {
+          $(this).addClass("floating");
+        }
+      });
+    });
+    </script>
+    <script>
+      $('#divform').click(function() {
+        $(this).addClass("floating");
+      });
+    </script>
+    <script>
+      $(window).scroll(function() {
+        $('#result-Bg').each(function(){
+        var imagePos = $(this).offset().top;
+    
+        var topOfWindow = $(window).scrollTop();
+          if (imagePos < topOfWindow+400) {
+            $(this).addClass("slideRight");
+          }
+        });
+      });
+    </script>
+    <script>
+      $('#result-Bg').click(function() {
+        $(this).addClass("slideRight");
+      });
+    </script>
+    <script>
+      $(window).scroll(function() {
+        $('#loginDiv').each(function(){
+        var imagePos = $(this).offset().top;
+    
+        var topOfWindow = $(window).scrollTop();
+          if (imagePos < topOfWindow+400) {
+            $(this).addClass("bigEntrance");
+          }
+        });
+      });
+    </script>
+    <script>
+      $('#loginDiv').click(function() {
+        $(this).addClass("bigEntrance");
+      });
+    </script>
+    <script>
+      $(window).scroll(function() {
+        $('#signupDiv').each(function(){
+        var imagePos = $(this).offset().top;
+    
+        var topOfWindow = $(window).scrollTop();
+          if (imagePos < topOfWindow+400) {
+            $(this).addClass("bigEntrance");
+          }
+        });
+      });
+    </script>
+    <script>
+      $('#signupDiv').click(function() {
+        $(this).addClass("bigEntrance");
+      });
+    </script>
   </body>
 </html>

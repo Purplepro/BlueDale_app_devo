@@ -1,6 +1,5 @@
 * {
   list-style: none;
-  /* font-family: Helvetica, sans-serif; */
   font-weight: bold;
 }
 
@@ -10,9 +9,10 @@
 
 nav ul li {
   text-decoration: none;
-  display: inline-block;
-  margin-right: .3em;
+  display: inline;
 }
+
+
 
 h1 {
   color: rgb(64, 151, 209);
@@ -27,26 +27,37 @@ a {
   margin-top: 5px;
 }
 
-#homelogo {
-
-  font-size: 50px;
-  color: rgb(74, 86, 253);
-  border: 2px solid white;
-
+.logo {
+  height: 200px;
+  width: 200px;
+  margin-left: 100px;
+  margin-top: -95px !important;
 }
 
 nav {
-  padding: 10px;
+  position: sticky;
+  background-color: wheat;
+  position: relative;
+}
+
+nav ul {
+  padding: 0px 0px 0px 0px;
+}
+
+
+.profile {
+  color: white;
 }
 
 .navlink {
   color: white;
   font-size: 20px;
-  padding: 5px
+  padding-left: 500px;
 }
 
 .link {
   color: white;
+  padding: 10px;
 }
 
 /* .searchbar {
@@ -60,12 +71,15 @@ nav {
 .input_and_button {
   text-align: center;
   margin: 0 auto;
+  padding: 0;
 }
+/* #searchButton {
+  font-size: 15px;
+} */
 
-.divform {
+#divform {
   display: flex;
-  margin-top: 200px;
-  background-color:
+  margin-top: 50px;
 }
 
 body {
@@ -79,6 +93,14 @@ body {
   color: white;
   opacity: 100%;
 }
+.results_header {
+  border: 2px solid white;
+  border-radius: 2em;
+  width: 400px;
+  padding-left: 160px;
+  margin-left: 50px;
+
+}
 
 /* crpytosearch form */
 .searchbar {
@@ -89,6 +111,20 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   border: none;
   color: white;
+}
+
+input[type="text"] {
+  padding-left: 20px;
+}
+
+#crypto_search_label {
+  display: block;
+  color: white;
+  font-size: 30px;
+  padding-bottom: 10px;
+  border: 2px solid white;
+  margin-bottom: 20px;
+  border-radius: 2em;
 }
 
 .searchbar:hover {
@@ -109,7 +145,7 @@ body {
   width: 150px;
   background-color:  rgb(64, 151, 209);
   opacity: 100%;
-  color: white
+  color: white;
 }
 
  #pad {
@@ -130,9 +166,132 @@ body {
   padding: 10px;
   margin-left: 10px;
   font-size: 20px;
+  margin-bottom: 15px; 
+  visibility: hidden;
+}
+
+#mywatchlist_div {
+  border: 2px solid white;
+  border-radius: 2em;
+  width: 450px;
+  padding-left: 100px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+/* watch list nav link */
+
+.watchlist {
+  color: white;
+  margin-left: 10px;
 }
 
 
 
+/* footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  padding: 10px 10px 0px 10px;
+} */
 
 
+
+/* login styling */ 
+.login {
+  border-radius: 2em;
+  height: 40px;
+  width: 200px;
+  display: block;
+  background-color: rgb(113, 216, 250, 0.7);
+  border: none;
+  outline: none;
+  margin: 10px auto;
+  color: white;
+}
+
+.login:hover {
+  border: 2px solid white;
+  transition: all 0.1s ease;
+
+}
+
+#loginB {
+  width: 100px;
+}
+
+#login_form {
+  border: 3px solid white;
+  width: 400px;
+  height: 300px;
+  border-radius: 2em;
+  margin: 0 auto;
+  padding-top: 50px;
+  background-color:rgba(0, 0, 0, 0.7) ;
+}
+
+.profile {
+   margin-left:100px;
+}
+
+/* login animations*/
+.loginDiv {
+  visibility: hidden;
+}
+
+
+/* signup styling */
+
+.signup {
+  border-radius: 2em;
+  height: 40px;
+  width: 200px;
+  display: block;
+  background-color: rgb(113, 216, 250, 0.7);
+  border: none;
+  outline: none;
+  margin: 10px auto;
+  color: white;
+}
+
+.signup:hover {
+  border: 2px solid white;
+  transition: all 0.1s ease;
+
+}
+
+#signupB {
+  width: 100px;
+}
+
+#signup_form {
+  border: 3px solid white;
+  width: 400px;
+  height: 400px;
+  border-radius: 2em;
+  margin: 0 auto;
+  padding-top: 50px;
+  background-color:rgba(0, 0, 0, 0.7) ;
+}
+
+.profile {
+   margin-left:100px;
+}
+
+/* signup animations */
+.signupDiv {
+  visibility: hidden;
+}
+
+
+/* visitor page styling */
+.Visitor {
+  color: white;
+  font-size: 80px;
+}
+
+#LandpageV {
+  font-size: 20px;
+  font-weight: lighter;
+}

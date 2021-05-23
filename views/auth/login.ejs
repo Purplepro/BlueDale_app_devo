@@ -1,9 +1,12 @@
-<form action="/auth/login" method="POST">
-  <label for="auth-email">Email</label>
-  <input  require id="auth-email" type="email" name="email">
 
-  <label for="auth-password">Password</label>
-  <input  require id="auth-password" type="password" name="password">
+<div id="loginDiv" class="bigEntrance">
+<form action="/auth/login" method="POST" id="login_form">
+  <label for="auth-email" class="profile">Email</label>
+  <input  require id="auth-email" type="email" name="email" class="login">
 
-  <input type="submit" value="Log In">
+  <label for="auth-password" class="profile">Password</label>
+  <input  require id="auth-password" type="password" name="password" class="login">
+
+  <input type="submit" value="Log In" class="login" id="loginB">
 </form>
+</div>

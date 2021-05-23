@@ -1,6 +1,8 @@
-<h1>Your crypto watchlist</h1>
-
+<div  id="mywatchlist_div" class="bigEntrance">
+<h1>Your Watchlist</h1>
+</div>
 <% listItems.forEach(result => { %> 
+    <div id="result-Bg" class="slideRight">
     <ul class="resultcolor">
         <li>Id: <%= result.id %> </li>
         <li>Rank: <%= result.rank  %> </li>
@@ -16,7 +18,12 @@
         <form method="POST" action="./mywatchlist/<%= result.id %>?_method=DELETE">
             <input type="submit" class = "btn btn-primary" value="Delete">
         </form>
-
       
     </ul>
+    <form method="POST" action="./mywatchlist/?_method=PUT">
+        <input type="submit" class="btn btn-primary" value="Update">
+        <input  hidden type="text" value= "<%= result.id %>" name="id">
+        <input  hidden type="text" value= "<%= result.cryptoid %> " name="cryptoid">
+        </form>
+    </div>
    <% }) %>

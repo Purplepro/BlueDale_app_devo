@@ -49,29 +49,53 @@ router.get('/mywatchlist', (req, res) => {
 
 })
 
+
+// router.put("/", (req,res)=>{
+//     db.pokemon.update({
+//       name: req.body.name
+//     }, {where: {
+//       id: req.body.id
+//     }})
+//     .then(deletedPoke=>{
+//       console.log(req.body)
+//       res.redirect('/pokemon')
+//     }).catch(err=>console.log(err))
+//     console.log(req.body)
+//   })
+
+
 router.put('/mywatchlist', (req, res) => {
-    updated = []
-    db.watchlist.update({
-        
-            where: {
-                id: req.params.id 
-
-            }
-
-
-
-        //   method: 'GET',
-        //   url: `api.coincap.io/v2/assets/${req.params}/history?interval=1m`,
-        //   headers: { } 
-        
-        })
-
-        .then(realTime => {
-            updated = [response.data];
-            console.log(realTime)
-        })
-         .catch(err => console.log(err))
-    res.render('./currency/mywatchlist', {updated})
+    
+    let updatedPrice
+    const config = { 
+        method: 'GET',
+        url: `http://api.coincap.io/v2/assets/${req.body.cryptoid}`,
+        headers: {} 
+      };
+      
+      axios(config)
+      .then(function (response) {
+        //   if(response.data === undefined) 
+        updatedPrice = response.data.data.priceUsd
+        console.log(response.data.data);
+        // console.log("body: %j", req.body)
+      })
+      .then(response => {
+        db.watchlist.update({
+            priceUsd: updatedPrice
+          }, { where: {
+            id: req.body.id
+          }})
+          .then(results => {
+              console.log(results)
+          })
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+   
+        console.log(req.body);
+        res.redirect('/currency/mywatchlist')
 })
 
 
