@@ -60,7 +60,6 @@ a {
 
 nav {
  
-  /* background-color: wheat; */
   position: relative;
 }
 
@@ -87,22 +86,13 @@ nav ul {
    margin-left: 30px; 
 }
 
-/* .searchbar {
-  border-radius: 2em;
-  height: 50px;
-  width: 300px;
-  font-size: 40px;
-  padding: 10px;
-} */
 
 .input_and_button {
   text-align: center;
   margin: 0 auto;
   padding: 0;
 }
-/* #searchButton {
-  font-size: 15px;
-} */
+
 
 #divform {
   display: flex;
@@ -223,18 +213,6 @@ input[type="text"] {
   border-radius: 2em;
   background-color: rgb(58, 189, 233);
 }
-
-
-
-/* footer {
-  background-color: rgba(0, 0, 0, 0.7);
-  height: 80px;
-  width: 100%;
-  position: fixed;
-  bottom: 0px;
-  padding: 10px 10px 0px 10px;
-} */
-
 
 
 /* login styling */ 
