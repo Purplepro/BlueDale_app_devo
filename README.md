@@ -55,7 +55,11 @@ router.get('/results', (req, res) => {
 })
 ```
 
+<img src="https://github.com/Purplepro/BlueDale_app_devo/blob/main/public/images/Screen%20Shot%202021-05-24%20at%206.26.00%20AM.png?raw=true" alt="my current site with styling added">
+
  ## Got Data back and it now renders on the page all from that line of code NICE
+ Here is the data along with styling
+ <img src="https://github.com/Purplepro/BlueDale_app_devo/blob/main/public/images/Screen%20Shot%202021-05-24%20at%206.36.04%20AM.png?raw=true" alt="results page with styling added">
 
 
 
@@ -100,6 +104,7 @@ Next I wanted to add data from my search results to my database created. I had t
 </ul>
 </div>
 ```
+<img src="https://github.com/Purplepro/BlueDale_app_devo/blob/main/public/images/Screen%20Shot%202021-05-24%20at%206.26.45%20AM.png?raw=true" alt="my watchlist page added data is stored">
 
 As you can see what I am doing is calling all of the
 

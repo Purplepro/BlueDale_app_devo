@@ -57,7 +57,7 @@ router.put('/mywatchlist', (req, res) => {
     let updatedPrice
     const config = { 
         method: 'GET',
-        url: `http://api.coincap.io/v2/assets/${req.body.cryptoid}`,
+        url: `http://api.coincap.io/v2/assets/${req.body.cryptoid}`,      
         headers: {} 
       };
       
