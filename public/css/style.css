@@ -14,6 +14,8 @@ nav ul li {
 
 
 
+
+
 h1 {
   color: rgb(64, 151, 209);
 }
@@ -25,18 +27,40 @@ a {
 #circle {
   border-radius: 3em;
   margin-top: 5px;
+  background-color: rgb(64, 151, 209);
+  z-index: 1;
 }
 
 .logo {
-  height: 200px;
-  width: 200px;
-  margin-left: 100px;
-  margin-top: -95px !important;
+  height: 250px;
+  width: 250px;
+  margin-left: 40px;
+  margin-top: -120px !important;
 }
 
+#logoLand {
+   position: absolute; 
+  margin-left: -200px;
+}
+
+#landingF {
+  border: 1px solid white;
+  border-radius: 2em;
+  padding: 10px;
+  transition: all 0.2s ease;
+  top: 35px;
+  left: 1000px;
+}
+
+#landingF:hover {
+      color: rgb(62, 180, 219);
+      transition: all 0.2s ease;
+}
+
+
 nav {
-  position: sticky;
-  background-color: wheat;
+ 
+  /* background-color: wheat; */
   position: relative;
 }
 
@@ -52,12 +76,15 @@ nav ul {
 .navlink {
   color: white;
   font-size: 20px;
-  padding-left: 500px;
+  padding-left: 20px;
 }
 
 .link {
   color: white;
-  padding: 10px;
+  padding: 5px;
+  position: relative;
+  left: 700px;
+   margin-left: 30px; 
 }
 
 /* .searchbar {
@@ -101,6 +128,7 @@ body {
   margin-left: 50px;
 
 }
+
 
 /* crpytosearch form */
 .searchbar {
@@ -183,6 +211,17 @@ input[type="text"] {
 .watchlist {
   color: white;
   margin-left: 10px;
+}
+
+#updatebutton {
+  border-radius: 2em;
+  background-color: rgb(58, 189, 233);
+  margin-left: 30px;
+}
+
+#deletebutton {
+  border-radius: 2em;
+  background-color: rgb(58, 189, 233);
 }
 
 
@@ -294,4 +333,42 @@ input[type="text"] {
 #LandpageV {
   font-size: 20px;
   font-weight: lighter;
+}
+
+
+
+/* profile styling */
+#profileP {
+  color: white;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 400px;
+  height: 300px;
+  margin: auto;
+  padding: 15px;
+  padding-left: 50px;
+  padding-top: 30px;
+  border-radius: 2em;
+}
+
+#profileH {
+  border: 2px solid white;
+  border-radius: 2em;
+  width: 380px;
+  color: white;
+  padding: 10px 10px 10px 30px;
+  margin: 10px auto;
+}
+
+
+/* footer styling */
+#footer {
+
+
+
+}
+
+#divFooter {
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 100px;
 }

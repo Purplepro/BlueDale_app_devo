@@ -50,18 +50,6 @@ router.get('/mywatchlist', (req, res) => {
 })
 
 
-// router.put("/", (req,res)=>{
-//     db.pokemon.update({
-//       name: req.body.name
-//     }, {where: {
-//       id: req.body.id
-//     }})
-//     .then(deletedPoke=>{
-//       console.log(req.body)
-//       res.redirect('/pokemon')
-//     }).catch(err=>console.log(err))
-//     console.log(req.body)
-//   })
 
 
 router.put('/mywatchlist', (req, res) => {
@@ -143,29 +131,7 @@ router.post('/mywatchlist', (req, res) => {
     res.redirect('/currency/results')
         console.log(req.body);
 
-        // const renderToPage = () => {
-        // results = []
-        // db.watchlist.findAll({
-        //     where: 'watchlists'
-        // })
-        // const config = { // this api is still needed so it can update realtime when refreshed
-        //     method: 'POST',
-        //     url: `http://api.coincap.io/v2/assets/${req.body.label}`,
-        //     headers: {  } 
-        //   };
-
-        //   axios(config)
-        //   .then(function (response) {
-        //     //   if(response.data === undefined) 
-        //     results = [response.data]; //define results
-        //     console.log(results);
-        //     res.render('./currency/mywatchlist', {results}); 
-            
-        //   })
-        //   .catch(function (error) {
-        //     console.log(error);
-        //   });
-   
+        
 
         res.render('./currency/mywatchlist', {results});
     

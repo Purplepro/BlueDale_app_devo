@@ -16,12 +16,12 @@
         <li>Timestamp: <%= result.timestamp %> </li>
         
         <form method="POST" action="./mywatchlist/<%= result.id %>?_method=DELETE">
-            <input type="submit" class = "btn btn-primary" value="Delete">
+            <input type="submit" class = "btn btn-primary" value="Delete" id="deletebutton">
         </form>
       
     </ul>
     <form method="POST" action="./mywatchlist/?_method=PUT">
-        <input type="submit" class="btn btn-primary" value="Update">
+        <input type="submit" class="btn btn-primary" value="Update" id="updatebutton">
         <input  hidden type="text" value= "<%= result.id %>" name="id">
         <input  hidden type="text" value= "<%= result.cryptoid %> " name="cryptoid">
         </form>
